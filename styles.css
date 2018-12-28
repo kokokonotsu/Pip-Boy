@@ -17,8 +17,9 @@ font-family: 'IBM Flex Mono', monospace;
 font-size: 20px;
 height: 100vh;
 overflow: hidden;
-padding: 2vmin;
+padding: 3vmin;
 width: 100vw;
+position: relative;
 }
 
 .screen:before {
@@ -46,11 +47,59 @@ z-index: 2;
 }
 
 .screen-header-bar{
-    border: 2px solid var(--pipBoyContentColor);
+    animation: colorPulse 5s infinite ease-in-out;
+    display: flex;
+    /* border-top: 2px solid var(--pipBoyContentColor);
+    border-left: 2px solid var(--pipBoyContentColor);
+    border-right: 2px solid var(--pipBoyContentColor); */
     height: 5vmin;
 }
+.page-header-bar{
+    width: 20%;
+    display: flex;
+    justify-content: space-between;
+}
 .page-header{
-    font-size: 20px;
+    font-size: 2em;
+    background: transparent;
+    text-transform: uppercase;
+    display: inline-flex;
+    justify-content: center;
+    height: 5vmin;
+    width: 80%;
+}
+.page-header-before{
+    display: inline-block;
+    border-top: 2px solid;
+    border-left: 2px solid;
+    height: 5vmin;
+    width: 20%;
+}
+/* .page-header-after{
+    display: inline-block;
+    border-top: 2px solid;
+    border-right: 2px solid;
+    height: 5vmin;
+    width: 30%;
+} */
+.page-header-span{
+    position: absolute;
+    top: 0;
+    
+}
+.block {
+    border-top: 2px solid;
+    border-right: 1px solid;
+    margin: 0 5px;
+    padding: 4px 4px 0 4px;
+    flex-grow: 1;
+    display: flex;
+    justify-content: space-between;
+}
+.stat-block-container{
+    display: flex;
+    flex-grow: 1;
+    justify-content: space-between;
 }
 p:last-child:after {
 animation: blink 1s infinite;
@@ -60,12 +109,15 @@ content: "_";
 @keyframes colorPulse {
 0%, 100% {
     color:#0c0;
+    border-color: #0c0;
 }
 48%, 52% {
     color:#090;
+    border-color: #090;
 }
 50% {
     color:#060;
+    border-color: #060;
 }
 }
 
