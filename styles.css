@@ -1,3 +1,6 @@
+:root{
+    --pipBoyContentColor: #0c0;
+}
 body {
 background-color:#000;
 margin:0;
@@ -10,11 +13,11 @@ animation: colorPulse 5s infinite ease-in-out;
 background-image: radial-gradient(#222, #111);
 box-shadow: 0 0 5vmin 1vmin #000 inset;
 box-sizing: border-box;
-font-family: 'Roboto Mono', monospace;
+font-family: 'IBM Flex Mono', monospace;
 font-size: 20px;
 height: 100vh;
 overflow: hidden;
-padding: 10vmin;
+padding: 2vmin;
 width: 100vw;
 }
 
@@ -42,6 +45,13 @@ top: 0;
 z-index: 2;
 }
 
+.screen-header-bar{
+    border: 2px solid var(--pipBoyContentColor);
+    height: 5vmin;
+}
+.page-header{
+    font-size: 20px;
+}
 p:last-child:after {
 animation: blink 1s infinite;
 content: "_";
