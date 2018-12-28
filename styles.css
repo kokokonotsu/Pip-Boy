@@ -90,7 +90,7 @@ z-index: 2;
 .block {
     border-top: 2px solid;
     border-right: 1px solid;
-    margin: 0 5px;
+    margin: 0 0 0 5px;
     padding: 4px 4px 0 4px;
     flex-grow: 1;
     display: flex;
