@@ -141,16 +141,13 @@ z-index: 2;
 .inventory-list-container::-webkit-scrollbar{
     width: 10px;
 }
-.inventory-list-container::-webkit-scrollbar-track{
+.inventory-list-container::-webkit-scrollbar-track-piece{
     background: transparent;
 }
 .inventory-list-container::-webkit-scrollbar-thumb{
+    animation: scrollColorPulse 5s infinite ease-in-out;
     background: linear-gradient(transparent, var(--pipBoyContentColor), transparent);
     border-radius: 50%;
-}
-.inventory-list-container::-webkit-scrollbar-button{
-    width: 10px;
-    background-image: url(fallout-arrow-big.png);
 }
 .inventory-list{
     width: 90%;
@@ -159,8 +156,12 @@ z-index: 2;
     list-style-type: none;
 }
 .inventory-list li{
+    animation: colorPulse 5s infinite ease-in-out;
     word-wrap: normal;
     overflow: hidden;
+    padding: 0.2rem;
+    font-size: 1.5rem;
+    border: 2px solid;
 }
 .ltr{
     direction: ltr;
@@ -210,7 +211,17 @@ content: "_";
     border-color: #060;
 }
 }
-
+@keyframes scrollColorPulse{
+    0%, 100% {
+        background: linear-gradient(transparent, var(--pipBoyContentColor), transparent);
+    }
+    48%, 52% {
+        background: linear-gradient(transparent, #090, transparent);
+    }
+    50% {
+        background: linear-gradient(transparent, #060, transparent);
+    }
+}
 @keyframes wave {
 0% {
     box-shadow: 0 -5vh 20vh #0c0;
