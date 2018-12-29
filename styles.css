@@ -13,7 +13,7 @@ animation: colorPulse 5s infinite ease-in-out;
 background-image: radial-gradient(#222, #111);
 box-shadow: 0 0 5vmin 1vmin #000 inset;
 box-sizing: border-box;
-font-family: 'IBM Flex Mono', monospace;
+font-family: monospace;
 font-size: 20px;
 height: 100vh;
 overflow: hidden;
@@ -147,6 +147,10 @@ z-index: 2;
 .inventory-list-container::-webkit-scrollbar-thumb{
     background: linear-gradient(transparent, var(--pipBoyContentColor), transparent);
     border-radius: 50%;
+}
+.inventory-list-container::-webkit-scrollbar-button{
+    width: 10px;
+    background-image: url(fallout-arrow-big.png);
 }
 .inventory-list{
     width: 90%;
