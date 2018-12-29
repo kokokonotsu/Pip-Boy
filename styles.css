@@ -144,7 +144,7 @@ z-index: 2;
     left: -15px;
     top: -10px;
     width: 40px;
-    height: 60px;
+    height: 30px;
     background-image: url(fallout-arrow-big.png);
     background-size: contain;
     background-repeat: no-repeat;
@@ -157,9 +157,9 @@ z-index: 2;
 .inventory-after{
     position: absolute;
     left: -15px;
-    bottom: -10px;
+    bottom: 50px;
     width: 40px;
-    height: 60px;
+    height: 20px;
     background-image: url(fallout-arrow-big.png);
     background-size: contain;
     background-repeat: no-repeat;
@@ -170,7 +170,7 @@ z-index: 2;
     border-bottom: 20px solid var(--pipBoyContentColor); */
     content: "";
 }
-.inventory-before:hover{
+.inventory-before:hover, .inventory-after:hover{
 opacity: 1;
 }
 .inventory-list-container::-webkit-scrollbar{
