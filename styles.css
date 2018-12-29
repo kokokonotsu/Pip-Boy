@@ -273,27 +273,37 @@ content: "_";
 }
 }
 @keyframes gradientUpColorPulse{
-0%, 52%, 100%{
+0%, 62%, 100%{
     background: linear-gradient(to top, #0c0, transparent);
 }
-48% {
+44%, 60%{
     background: linear-gradient(to top, #0b0, transparent);
 }
-50%{
+46%, 56%{
+    background: linear-gradient(to top, #0a0, transparent);
+}
+48%, 52% {
     background: linear-gradient(to top, #090, transparent);
-
+}
+50%{
+    background: linear-gradient(to top, #060, transparent);
 }
 }
 @keyframes gradientDownColorPulse{
-    0%, 52%, 100% {
+    0%, 62%, 100%{
         background: linear-gradient(to bottom, #0c0, transparent);
     }
-    48% {
+    44%, 60%{
         background: linear-gradient(to bottom, #0b0, transparent);
     }
-    50%{
+    46%, 56%{
+        background: linear-gradient(to bottom, #0a0, transparent);
+    }
+    48%, 52% {
         background: linear-gradient(to bottom, #090, transparent);
-
+    }
+    50%{
+        background: linear-gradient(to bottom, #060, transparent);
     }
     }
 @keyframes scrollColorPulse{
