@@ -107,6 +107,7 @@ z-index: 2;
     animation: gradientDownColorPulse 5s infinite ease-in-out;
     width: 2px;
     height: 100%;
+    transition: all ease-in-out;
 }
 .stat-block-container{
     display: flex;
@@ -225,11 +226,13 @@ opacity: 1;
     animation: gradientUpColorPulse 5s infinite ease-in-out;
     width: 2px;
     height: 5vh;
+    transition: all ease-in-out;
 }
 .bottom-right{
     animation: gradientUpColorPulse 5s infinite ease-in-out;
     width: 2px;
     height: 5vh;
+    transition: all ease-in-out;
 }
 p:last-child:after {
 animation: blink 1s infinite;
@@ -259,47 +262,49 @@ content: "_";
 }
 }
 @keyframes backgroundColorPulse {
-0%, 100% {
+0%, 60%, 100% {
     background-color: #0c0;
 }
-48%, 52% {
+50% {
     background-color: #090;
 }
-50% {
-    background-color: #060;
+52%{
+    background-color: #0b0;
 }
 }
 @keyframes gradientUpColorPulse{
-0%, 100% {
-    background-image: linear-gradient(to top, #0c0, transparent);
+0%, 52%, 100%{
+    background: linear-gradient(to top, #0c0, transparent);
 }
-48%, 52% {
-    background-image: linear-gradient(to top, #090, transparent);
+48% {
+    background: linear-gradient(to top, #0b0, transparent);
 }
-50% {
-    background-image: linear-gradient(to top, #060, transparent);
+50%{
+    background: linear-gradient(to top, #090, transparent);
+
 }
 }
 @keyframes gradientDownColorPulse{
-    0%, 100% {
-        background-image: linear-gradient(to bottom, #0c0, transparent);
+    0%, 52%, 100% {
+        background: linear-gradient(to bottom, #0c0, transparent);
     }
-    48%, 52% {
-        background-image: linear-gradient(to bottom, #090, transparent);
+    48% {
+        background: linear-gradient(to bottom, #0b0, transparent);
     }
-    50% {
-        background-image: linear-gradient(to bottom, #060, transparent);
+    50%{
+        background: linear-gradient(to bottom, #090, transparent);
+
     }
     }
 @keyframes scrollColorPulse{
     0%, 100% {
-        background-image: linear-gradient(transparent, var(--pipBoyContentColor), transparent);
+        background: linear-gradient(transparent, var(--pipBoyContentColor), transparent);
     }
     48%, 52% {
-        background-image: linear-gradient(transparent, #090, transparent);
+        background: linear-gradient(transparent, #090, transparent);
     }
     50% {
-        background-image: linear-gradient(transparent, #060, transparent);
+        background: linear-gradient(transparent, #060, transparent);
     }
 }
 @keyframes wave {
