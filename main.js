@@ -4,17 +4,29 @@ var inventory_scroll_down_button = document.getElementsByClassName("inventory-af
 var lastKnownScrollPosition = 0;
 var ticking;
 
-function scrollIt(scroll_pos){
-    inventory.clientY = scroll_pos;
-    console.log(inventory.clientY);
+function scrollItUp(){
+    inventory.scrollBy(0, -50);
+    console.log(inventory.scrollTop);
 }
-
-inventory.addEventListener("scroll", (e) => {
-    lastKnownScrollPosition = inventory.scrollY;
-
+function scrollItDown(){
+    inventory.scrollBy(0, 50);
+    console.log(inventory.scrollTop);
+}
+inventory_scroll_up_button.addEventListener("click", (e) => {
+    lastKnownScrollPosition = inventory.scrollTop;
     if(!ticking){
         window.requestAnimationFrame(() => {
-            scrollIt(lastKnownScrollPosition);
+            scrollItUp();
+            ticking = false;
+        });
+        ticking = true;
+    }
+});
+inventory_scroll_down_button.addEventListener("click", (e) => {
+    lastKnownScrollPosition = inventory.scrollTop;
+    if(!ticking){
+        window.requestAnimationFrame(() => {
+            scrollItDown();
             ticking = false;
         });
         ticking = true;
