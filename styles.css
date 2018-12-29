@@ -104,9 +104,9 @@ z-index: 2;
     justify-content: space-between;
 }
 .block-border-piece{
+    animation: gradientDownColorPulse 5s infinite ease-in-out;
     width: 2px;
     height: 100%;
-    background-image: linear-gradient(to bottom, var(--pipBoyContentColor), transparent);
 }
 .stat-block-container{
     display: flex;
@@ -222,14 +222,14 @@ opacity: 1;
     border-bottom: 2px solid;
 }
 .bottom-left{
+    animation: gradientUpColorPulse 5s infinite ease-in-out;
     width: 2px;
     height: 5vh;
-    background-image: linear-gradient(to top, var(--pipBoyContentColor), transparent);
 }
 .bottom-right{
+    animation: gradientUpColorPulse 5s infinite ease-in-out;
     width: 2px;
     height: 5vh;
-    background-image: linear-gradient(to top, var(--pipBoyContentColor), transparent);
 }
 p:last-child:after {
 animation: blink 1s infinite;
@@ -258,6 +258,39 @@ content: "_";
     border-color: #060;
 }
 }
+@keyframes backgroundColorPulse {
+0%, 100% {
+    background-color: #0c0;
+}
+48%, 52% {
+    background-color: #090;
+}
+50% {
+    background-color: #060;
+}
+}
+@keyframes gradientUpColorPulse{
+0%, 100% {
+    background-image: linear-gradient(to top, #0c0, transparent);
+}
+48%, 52% {
+    background-image: linear-gradient(to top, #090, transparent);
+}
+50% {
+    background-image: linear-gradient(to top, #060, transparent);
+}
+}
+@keyframes gradientDownColorPulse{
+    0%, 100% {
+        background-image: linear-gradient(to bottom, #0c0, transparent);
+    }
+    48%, 52% {
+        background-image: linear-gradient(to bottom, #090, transparent);
+    }
+    50% {
+        background-image: linear-gradient(to bottom, #060, transparent);
+    }
+    }
 @keyframes scrollColorPulse{
     0%, 100% {
         background-image: linear-gradient(transparent, var(--pipBoyContentColor), transparent);
