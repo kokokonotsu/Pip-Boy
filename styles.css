@@ -104,10 +104,11 @@ z-index: 2;
     justify-content: space-between;
 }
 .block-border-piece{
-    animation: gradientDownColorPulse 5s infinite ease-in-out;
+    animation: opacityColorPulse 5s infinite ease-in-out;
     width: 2px;
     height: 100%;
     transition: all ease-in-out;
+    background: linear-gradient(to bottom, #0c0, transparent);
 }
 .stat-block-container{
     display: flex;
@@ -144,6 +145,24 @@ z-index: 2;
     height: 20%;
     width: 90%;
     border: 2px solid;
+    display: flex;
+    flex-direction: column;
+}
+.item-spec-row-one, .item-spec-row-two{
+    display: flex;
+    height: 50%;
+}
+.item-dam, .item-wg, .item-val{
+    flex-grow: 1;
+    border-top: 2px solid;
+    display: flex;
+    justify-content: space-between;
+}
+.item-dam-after, .item-wg-after, .item-val-after, .item-cnd-after, .item-effect-after{
+    animation: opacityColorPulse 5s infinite ease-in-out;
+    width: 2px;
+    height: 5vh;
+    background: linear-gradient(to bottom, #0c0, transparent);
 }
 .inventory-list-container{
     position: relative;
@@ -257,16 +276,18 @@ opacity: 1;
     border-bottom: 2px solid;
 }
 .bottom-left{
-    animation: gradientUpColorPulse 5s infinite ease-in-out;
+    animation: opacityColorPulse 5s infinite ease-in-out;
     width: 2px;
     height: 5vh;
     transition: all ease-in-out;
+    background: linear-gradient(to top, #0c0, transparent);
 }
 .bottom-right{
-    animation: gradientUpColorPulse 5s infinite ease-in-out;
+    animation: opacityColorPulse 5s infinite ease-in-out;
     width: 2px;
     height: 5vh;
     transition: all ease-in-out;
+    background: linear-gradient(to top, #0c0, transparent);
 }
 p:last-child:after {
 animation: blink 1s infinite;
@@ -283,6 +304,17 @@ content: "_";
 50% {
     color:#060;
 }
+}
+@keyframes opacityColorPulse{
+    0%, 100% {
+        opacity: 1;
+    }
+    48%, 52% {
+        opacity: 0.7;
+    }
+    50% {
+        opacity: 0.45;
+    }
 }
 @keyframes borderColorPulse {
 0%, 100% {
@@ -306,40 +338,6 @@ content: "_";
     background-color: #0b0;
 }
 }
-@keyframes gradientUpColorPulse{
-0%, 62%, 100%{
-    background: linear-gradient(to top, #0c0, transparent);
-}
-44%, 60%{
-    background: linear-gradient(to top, #0b0, transparent);
-}
-46%, 56%{
-    background: linear-gradient(to top, #0a0, transparent);
-}
-48%, 52% {
-    background: linear-gradient(to top, #090, transparent);
-}
-50%{
-    background: linear-gradient(to top, #060, transparent);
-}
-}
-@keyframes gradientDownColorPulse{
-    0%, 62%, 100%{
-        background: linear-gradient(to bottom, #0c0, transparent);
-    }
-    44%, 60%{
-        background: linear-gradient(to bottom, #0b0, transparent);
-    }
-    46%, 56%{
-        background: linear-gradient(to bottom, #0a0, transparent);
-    }
-    48%, 52% {
-        background: linear-gradient(to bottom, #090, transparent);
-    }
-    50%{
-        background: linear-gradient(to bottom, #060, transparent);
-    }
-    }
 @keyframes scrollColorPulse{
     0%, 100% {
         background: linear-gradient(transparent, var(--pipBoyContentColor), transparent);
