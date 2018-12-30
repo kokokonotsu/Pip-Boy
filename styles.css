@@ -260,7 +260,7 @@ opacity: 1;
 }
 .inventory-list-container::-webkit-scrollbar-thumb{
     animation: opacityColorPulse 5s infinite ease-in-out;
-    /* background: linear-gradient(transparent, var(--pipBoyContentColor), transparent); */
+    background: linear-gradient(transparent, var(--pipBoyContentColor), transparent);
     border-radius: 50%;
 }
 .inventory-list{
