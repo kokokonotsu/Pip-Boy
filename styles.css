@@ -152,6 +152,11 @@ z-index: 2;
     height: 100%;
     width: 40%;
 }
+.concept-vault-boy{
+    animation: opacityColorPulse 5s infinite ease-in-out;
+    height: 100%;
+    width: 40%;
+}
 .item-spec-container{
     margin-top: 1%;
     height: 20%;
