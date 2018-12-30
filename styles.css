@@ -91,6 +91,9 @@ z-index: 2;
     top: 0;
     
 }
+.upper-border{
+    border-top: 2px solid;
+}
 .block-container{
     border-top: 2px solid;
     margin: 0 0 0 5px;
@@ -144,25 +147,53 @@ z-index: 2;
 .item-spec-container{
     height: 20%;
     width: 90%;
-    border: 2px solid;
     display: flex;
     flex-direction: column;
 }
-.item-spec-row-one, .item-spec-row-two{
+.item-spec-row-one{
     display: flex;
     height: 50%;
+}
+.item-spec-row-two{
+    display: grid;
+    height: 50%;
+    grid-template:
+    "cnd cnd-end-piece effect effect effect-end-piece" 100%
+    / 33% 2px 33% 33% 2px;
 }
 .item-dam, .item-wg, .item-val{
     flex-grow: 1;
     border-top: 2px solid;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
 }
-.item-dam-after, .item-wg-after, .item-val-after, .item-cnd-after, .item-effect-after{
+.item-wg, .item-val{
+    margin-left: 1%;
+}
+.item-cnd{
+    grid-area: cnd;
+}
+.item-effect{
+    grid-area: effect;
+    flex-grow: 1;
+    margin-left: 1%;
+}
+.item-dam-after, .item-wg-after, .item-val-after{
     animation: opacityColorPulse 5s infinite ease-in-out;
     width: 2px;
     height: 5vh;
     background: linear-gradient(to bottom, #0c0, transparent);
+}
+.item-cnd-after{
+    grid-area: cnd-end-piece;
+}
+.item-effect-after{
+    grid-area: effect-end-piece;
+}
+.item-cnd-after, .item-effect-after{
+    animation: opacityColorPulse 5s infinite ease-in-out;
+    background: linear-gradient(to bottom, #0c0, transparent);
+    height: 5vh;
 }
 .inventory-list-container{
     position: relative;
