@@ -287,6 +287,7 @@ opacity: 1;
     align-items: center;
 }
 .inventory-item-checkbox{
+    animation: opacityColorPulse 5s infinite ease-in-out;
     height: 1rem;
     width: 1rem;
     border: 2px solid;
@@ -329,6 +330,7 @@ opacity: 1;
     align-items: center;
 }
 .weapons-tab, .apparel-tab, .aid-tab, .misc-tab, .ammo-tab{
+    animation: opacityColorPulse 5s infinite ease-in-out;
     width: 15%;
     display: flex;
     justify-content: center;
