@@ -141,7 +141,7 @@ z-index: 2;
 }
 .item-image-container{
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-evenly;
     align-items: flex-end;
     height: 60%;
     width: 90%;
@@ -155,7 +155,8 @@ z-index: 2;
 .concept-vault-boy{
     animation: opacityColorPulse 5s infinite ease-in-out;
     height: 100%;
-    width: 40%;
+    width: 20%;
+    transform: scaleX(-1);
 }
 .item-spec-container{
     margin-top: 1%;
@@ -297,7 +298,9 @@ opacity: 1;
     width: 1rem;
     border: 2px solid;
     margin: 0 0.5rem 0 0.25rem;
-    background-color: transparent;
+}
+.checked{
+    background-color: var(--pipBoyContentColor);
 }
 .item-container{
     width: 90%;
