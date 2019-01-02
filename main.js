@@ -41,10 +41,10 @@ function itemHover(e){
 }
 //Item Out Function
 function itemOut(e){
-    if(e.target.firstChild.className == "inventory-item-checkbox" || e.target.className == "inventory-item-checkbox"){
+    if(e.target.className == "inventory-item-checkbox"){ 
+        e.target.classList.remove("highlight");
+    } else if(e.target.className == "inventory-item-container"){
         e.target.firstChild.classList.remove("highlight");
-        console.log("I am running");
-
     }
 }
 //Scrolling via JS
