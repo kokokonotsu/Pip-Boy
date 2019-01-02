@@ -46,13 +46,13 @@ function check(e){
 function itemHover(e){
     if(e.target.classList.contains("inventory-item-checkbox")){ 
         e.target.classList.add("highlight");
-        e.target.parentElement.classList.add("highlight-border");
+        e.target.parentElement.style.border = "2px solid";
         console.log("I am running");
 
     }
     else if(e.target.classList.contains("inventory-item-container")){
         e.target.firstChild.classList.add("highlight");
-        e.target.classList.add("highlight-border");
+        e.target.style.border = "2px solid";
         console.log("I am running");
 
     }
@@ -66,11 +66,11 @@ function itemOut(e){
     if(e.target.classList.contains("inventory-item-checkbox")){
         console.log("I am running");
         e.target.classList.remove("highlight");
-        e.target.parentElement.classList.remove("highlight-border");
+        e.target.parentElement.style.border = "2px solid transparent";
     }
     if(e.target.classList.contains("inventory-item-container")){
         e.target.firstChild.classList.remove("highlight");
-        e.target.classList.remove("highlight-border");
+        e.target.style.border = "2px solid transparent";
     }
 }
 //Scrolling via JS
