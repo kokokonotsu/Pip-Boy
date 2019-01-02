@@ -33,10 +33,10 @@ function check(e){
 }
 //Item Hover Function
 function itemHover(e){
-    if(e.target.firstChild.className == "inventory-item-checkbox"){ 
-        e.target.firstChild.classList.add("highlight");
-    } else if(e.target.className == "inventory-item-checkbox"){
+    if(e.target.className == "inventory-item-checkbox"){ 
         e.target.classList.add("highlight");
+    } else if(e.target.className == "inventory-item-container"){
+        e.target.firstChild.classList.add("highlight");
     }
 }
 //Item Out Function
