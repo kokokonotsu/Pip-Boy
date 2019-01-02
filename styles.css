@@ -300,17 +300,13 @@ opacity: 1;
     list-style-type: none;
     padding: 0;
 }
-.inventory-list li{
-    animation: colorPulse 5s infinite ease-in-out;
-    animation: borderColorPulse 5s infinite ease-in-out;
+.inventory-list .inventory-item-container{
+    animation: opacityColorPulse 5s infinite ease-in-out;
     word-wrap: normal;
     overflow: hidden;
     padding: 0.2rem;
     font-size: 1.6rem;
-    border: 2px solid var(--pipBoyContentColor);
-}
-.inventory-list li:hover, .inventory-list li:focus{
-    border: 2px solid var(--pipBoyContentColor);
+    border: 2px solid transparent;
 }
 .inventory-item-container{
     display: flex;
@@ -328,6 +324,9 @@ opacity: 1;
 }
 .highlight{
     background-color: var(--pipBoyContentColor);
+}
+.highlight-border{
+    border: 2px solid var(--pipBoyContentColor);
 }
 .item-container{
     width: 90%;

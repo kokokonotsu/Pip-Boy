@@ -12,14 +12,17 @@ console.log(offsetChangeUp);
 //Add Attributes
 for(let i = 0; i < inventoryItemCheckBoxes.length; i++){
     inventoryItemCheckBoxes[i].setAttribute("onclick", "check(event)");
+    inventoryItemCheckBoxes[i].setAttribute("onmouseover", "itemHover(event)");
+    inventoryItemCheckBoxes[i].setAttribute("onmouseleave", "itemOut(event)");
 }
 for(let i = 0; i < inventoryItem.length; i++){
+    inventoryItem[i].setAttribute("onclick", "check(event)");
     inventoryItem[i].setAttribute("onmouseover", "itemHover(event)");
     inventoryItem[i].setAttribute("onmouseleave", "itemOut(event)");
 }
 //CheckBox Function
 function check(e){
-    if(!e.target.classList.contains("checked")){
+    if(!e.target.classList.contains("checked") && e.target.classList.contains("inventory-item-checkbox")){
         e.target.classList.add("checked");
         for(let i = 0; i < inventoryItemCheckBoxes.length; i++){
             if(inventoryItemCheckBoxes[i] != e.target){
@@ -27,24 +30,47 @@ function check(e){
             }
         }
     }
-    else if(e.target.classList.contains("checked")){
-        e.target.classList.remove("checked");
+    else if(e.target.classList.contains("inventory-item-container")){
+        e.target.firstChild.classList.add("checked");
+        for(let i = 0; i < inventoryItemCheckBoxes.length; i++){
+            if(inventoryItemCheckBoxes[i] != e.target.firstChild){
+                inventoryItemCheckBoxes[i].classList.remove("checked");
+            }
+        }
     }
+    // else {
+    //     e.target.classList.remove("checked");
+    // }
 }
 //Item Hover Function
 function itemHover(e){
-    if(e.target.className == "inventory-item-checkbox"){ 
+    if(e.target.classList.contains("inventory-item-checkbox")){ 
         e.target.classList.add("highlight");
-    } else if(e.target.className == "inventory-item-container"){
-        e.target.firstChild.classList.add("highlight");
+        e.target.parentElement.classList.add("highlight-border");
+        console.log("I am running");
+
     }
+    else if(e.target.classList.contains("inventory-item-container")){
+        e.target.firstChild.classList.add("highlight");
+        e.target.classList.add("highlight-border");
+        console.log("I am running");
+
+    }
+    // else if(e.target.classList.contains("item-container")){
+    //     e.target.parentElement.firstChild.classList.add("highlight");
+    //     e.target.parentElement.classList.add("highlight-border");
+    // }
 }
 //Item Out Function
 function itemOut(e){
-    if(e.target.className == "inventory-item-checkbox"){ 
+    if(e.target.classList.contains("inventory-item-checkbox")){
+        console.log("I am running");
         e.target.classList.remove("highlight");
-    } else if(e.target.className == "inventory-item-container"){
+        e.target.parentElement.classList.remove("highlight-border");
+    }
+    if(e.target.classList.contains("inventory-item-container")){
         e.target.firstChild.classList.remove("highlight");
+        e.target.classList.remove("highlight-border");
     }
 }
 //Scrolling via JS
