@@ -5,8 +5,11 @@ var inventory_scroll_up_button = document.getElementsByClassName("inventory-befo
 var inventory_scroll_down_button = document.getElementsByClassName("inventory-after")[0];
 var inventoryHeight = inventory.offsetHeight;
 var stats = document.getElementById("stats-button");
+var statsSpan = document.getElementById("stats-span");
 var items = document.getElementById("items-button");
+var itemsSpan = document.getElementById("items-span");
 var data = document.getElementById("data-button");
+var dataSpan = document.getElementById("data-span");
 var offsetChangeUp = ((inventoryHeight/100) * 10) * -1;
 var offsetChangeDown = (inventoryHeight/100) * 10;
 var inventoryItemCheckBoxes = document.getElementsByClassName("inventory-item-checkbox");
@@ -146,13 +149,61 @@ var dialObject = {
             alert("No angle found");
         }
     },
+    activate: function(e){
+        switch(e.target.id){
+            case "stats-button":
+            if(!stats.classList.contains("active")){
+                stats.classList.add("active");
+                statsSpan.classList.add("active-font-color");
+            }
+            if(items.classList.contains("active")){
+                items.classList.remove("active");
+                itemsSpan.classList.remove("active-font-color");
+            }
+            if(data.classList.contains("active")){
+                data.classList.remove("active");
+                dataSpan.classList.remove("active-font-color");
+            }
+            break;
+            case "items-button":
+            if(!items.classList.contains("active")){
+                items.classList.add("active");
+                itemsSpan.classList.add("active-font-color");
+            }
+            if(stats.classList.contains("active")){
+                stats.classList.remove("active");
+                statsSpan.classList.remove("active-font-color");
+            }
+            if(data.classList.contains("active")){
+                data.classList.remove("active");
+                dataSpan.classList.remove("active-font-color");
+            }
+            break;
+            case "data-button":
+            if(!data.classList.contains("active")){
+                data.classList.add("active");
+                dataSpan.classList.add("active-font-color");
+            }
+            if(items.classList.contains("active")){
+                items.classList.remove("active");
+                itemsSpan.classList.remove("active-font-color");
+            }
+            if(stats.classList.contains("active")){
+                stats.classList.remove("active");
+                statsSpan.classList.remove("active-font-color");
+            }
+        }
+    },
     hover: function(){
         return this.style.opacity = "1";
     }
 }
 stats.addEventListener("click", dialObject.rotate);
+stats.addEventListener("click", dialObject.activate);
 items.addEventListener("click", dialObject.rotate);
+items.addEventListener("click", dialObject.activate);
 data.addEventListener("click", dialObject.rotate);
+data.addEventListener("click", dialObject.activate);
 //Gauge
 // var gauge = new RadialGauge({
 //     renderTo: 'dial', // identifier of HTML canvas element or element itself

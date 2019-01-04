@@ -21,15 +21,24 @@ padding:0;
     height: 100vh;
     background-color: #424539;
 }
-.housing{
+.frame{
     display: flex;
     justify-content: center;
     align-items: center;
     height: 90vh;
     width: 90vw;
     border-radius: 4%;
+    background-color: #212019;
+    margin: 0 1% 0 1%;
+}
+.housing{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 99%;
+    width: 98.5%;
+    border-radius: 4%;
     background-color: #22221f;
-    margin: 0 2% 0 2%;
 }
 .selector-bar-container{
     position: relative;
@@ -110,14 +119,20 @@ padding:0;
     width: 100%;
 }
 .button-label{
-    animation: labelColorPulse 10s infinite ease-in-out;
     position: absolute;
-    top: -1.5em;
+    top: -1.9em;
     padding: 0 .5em 0 .5em;
+    background-color: #21211c;
+    border: 2px inset #4a524c;
+    color: #9b4512;
+    border-radius: 2px;
+}
+#stats-span, #items-span, #data-span{
+    animation: opacityColorPulse 5s infinite ease-in-out;
     text-transform: uppercase;
     font-family: monospace;
     font-size: 1.5em;
-    color: #9b4512;
+    
 }
 .stats-bar, .items-bar, .data-bar{
     position: relative;
@@ -131,10 +146,18 @@ padding:0;
     background-color: #4a524c;
 }
 .selector-button{
+    animation: opacityColorPulse 5s infinite ease-in-out;
     height: 85%;
     width: 85%;
     border-radius: 50%;
-    background-color: #a65220; 
+    border: 1px inset #a65220;
+    background-color: #b8571f;
+}
+.active{
+    background-color: #ff9410;
+}
+.active-font-color{
+    color: #ff9410;
 }
 .screen {
 animation: colorPulse 5s infinite ease-in-out;
