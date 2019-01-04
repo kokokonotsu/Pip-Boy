@@ -6,10 +6,20 @@
     <title>RobCo Pip-Boy Simulator</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="styles.css" />
+    
 </head>
 <body>
     <div class="casing">
-        <div class="housing"></div>
+            <div class="selector-bar-container">
+                <div id="dial-switch"><div id="dial-indicator"></div></div>
+                    <ul class="selector-bar">
+                        <li class="stats-bar-container"><div class="stats-bar"><div class="button-label text-shadow">STATS</div><div id="stats-button" class="selector-button"></div></div></li>
+                        <li class="items-bar-container"><div class="items-bar"><div class="button-label text-shadow">ITEMS</div><div id="items-button" class="selector-button"></div></div></li>
+                        <li class="data-bar-container"><div class="data-bar"><div class="button-label text-shadow">DATA</div><div id="data-button" class="selector-button"></div></div></li>
+                    </ul>
+                    <div class="side-border"></div>
+                </div>
+        <div class="housing">
         <div class="screen">
             <div class="screen-header-bar">
                 <div class="page-header-bar"><div class="page-header-before-container"><div class="block-border-piece"></div><div class="page-header-before"></div></div><div class="page-header"><span class="page-header-span">Items</span></div></div>
@@ -84,10 +94,9 @@
                 </div>
             </div>
         </div>
-        <div class="selector-bar-container">
-
         </div>
     </div>
 </body>
+<script src="gauge.min.js"></script>
 <script src="main.js"></script>
 </html>
