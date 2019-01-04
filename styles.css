@@ -53,6 +53,7 @@ padding:0;
     height: 80%;
     width: 80%;
     background: radial-gradient(#1b1d1a, #1f2323);
+    border: 1px solid #1b1d1a;
     border-radius: 50%;
 }
 #dial-switch{
